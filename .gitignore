@@ -1,12 +1,10 @@
 # vscode stuff
 .vscode
-.vs
-/.vs/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-.gitattributes/**
+
 # C extensions
 *.so
 

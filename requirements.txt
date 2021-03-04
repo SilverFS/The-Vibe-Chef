@@ -2,4 +2,3 @@ discord.py
 pretty_help
 dnspython
 platform
-Embed
