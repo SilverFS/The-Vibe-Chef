@@ -11,7 +11,8 @@ class Utilities(commands.Cog):
  
 
     ##Basic ping function (with embed)
-    @commands.command(name="ping", 
+    @commands.command(name="ping",
+                    help="Use this command if you want to know what my latency is!",
                     brief="Show's the chef's latency in ms.", 
                     description="Use this command if you want to know what my latency is!",
                     usage="`ping`")
@@ -24,11 +25,14 @@ class Utilities(commands.Cog):
 
 
     ##Stats command
-    @commands.command(name="stats", 
+    @commands.command(name="stats",
+                      help="Statistics of the bot includes: discord.py version, Python version and how many servers the bot is in.",
                       brief="The statistics of the bot.", 
                       description="Statistics of the bot includes: discord.py version, Python version and how many servers the bot is in.")
     async def stats(self, ctx):
       bot = self.bot
+
+
       pythonVersion = platform.python_version()
       dpyVersion = discord.__version__
       serverCount = len(bot.guilds)

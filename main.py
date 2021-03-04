@@ -10,10 +10,14 @@ def test_version():
 
 
 #Defines prefix and pretty_help command
-bot = commands.Bot(
-	command_prefix="%", case_insensitive=True, help_command=PrettyHelp(navigation=Navigation(page_left='⬅️', page_right='➡️', remove='🗑️'), color=discord.Color.gold(), active=60, sort_commands=True))
+bot = commands.Bot(command_prefix="%", 
+case_insensitive=True, 
+help_command=PrettyHelp(navigation=Navigation(page_left='⬅️', page_right='➡️', remove='🗑️'), 
+color=discord.Color.gold(), 
+active=60, show_index=False,
+ending_notes= "Type %help command for more info on a command. :cowboy:", 
+sort_commands=True))
 bot.author_id = 296302114794373121  #Author discord ID!!!
-
 
 
 #Prints in console
