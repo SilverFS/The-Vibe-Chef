@@ -25,7 +25,8 @@ class Utilities(commands.Cog):
 
 
     ##Stats command
-    @commands.command(name="stats",
+    @commands.command(aliases=['statistics', 'status'],
+                      name="stats",
                       help="Statistics of the bot includes: discord.py version, Python version and how many servers the bot is in.",
                       brief="The statistics of the bot.", 
                       description="Statistics of the bot includes: discord.py version, Python version and how many servers the bot is in.")
@@ -33,12 +34,16 @@ class Utilities(commands.Cog):
       bot = self.bot
 
 
+      
       pythonVersion = platform.python_version()
       dpyVersion = discord.__version__
       serverCount = len(bot.guilds)
       memberCount = len(set(bot.get_all_members()))
-      desResult = (f"I'm in {serverCount} servers, with a total of {memberCount} members. :blush:\nI'm running python {pythonVersion} and discord.py {dpyVersion} :snake:")
+      desResult = (f"I'm in {serverCount} servers, with a total of {memberCount} members. :blush:\nI'm running python {pythonVersion} and discord.py {dpyVersion} :snake:\n")
       myembed = discord.Embed(title="My current stats:", description=desResult, color=0xf1c40f)
+      myembed.set_footer(icon_url = ctx.author.avatar_url, text=f'Requested by {ctx.author.name}')
+      myembed.set_author(name='The Vibe-Chef',
+      icon_url='https://cdn.discordapp.com/avatars/771763476946878484/3f51758747ce8752edb25811afa61f5a.png?size=4096')
       await ctx.send(embed=myembed)
 
 

@@ -44,7 +44,14 @@ class Fun(commands.Cog):
 
         
         if message.content == 'vibecheck':
-            await message.channel.send('VIBE')
+            responses = ['VIBE!',
+                         'VIBING',
+                         'STILL VIBING',
+                         'VIBING HARD!',
+                         'VIBING EVEN HARDER!']
+            vibeResponse = ((f'{random.choice(responses)}'))
+            await message.channel.send(vibeResponse) ##(f'> {random.choice(responses)}')             
+            
 
 
     ##Tableflip response (with embed)
@@ -103,8 +110,7 @@ class Fun(commands.Cog):
                     '(۶ૈ ۜ ᵒ̌▱๋ᵒ̌ )۶ૈ=͟͟͞͞ ⌨',]
         Title = ((f'{random.choice(responses)}'))
         myembed = discord.Embed(title=Title)
-        await ctx.send(embed=myembed) ##(f'> {random.choice(responses)}')
-
+        await ctx.send(embed=myembed) 
 
 
 
