@@ -13,11 +13,12 @@ def test_version():
 bot = commands.Bot(command_prefix="%", 
 case_insensitive=True, 
 help_command=PrettyHelp(navigation=Navigation(page_left='⬅️', page_right='➡️', remove='🗑️'), 
-color=discord.Color.gold(), 
+author_id = 296302114794373121,  #Author discord ID!!!
+color=discord.Color.gold(),
+ending_note='Type the help command for more info on a command!',
 active=60, show_index=False,
-ending_notes= "Type %help command for more info on a command. :cowboy:", 
 sort_commands=True))
-bot.author_id = 296302114794373121  #Author discord ID!!!
+
 
 
 #Prints in console
