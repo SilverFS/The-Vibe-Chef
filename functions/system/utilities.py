@@ -1,8 +1,9 @@
 import discord
 from discord import Embed
 from discord.ext import commands
+from discord.ext.commands import MissingPermissions
 import platform #For stats
-
+import json
 
 class Utilities(commands.Cog):
 
@@ -34,7 +35,6 @@ class Utilities(commands.Cog):
       bot = self.bot
 
 
-      
       pythonVersion = platform.python_version()
       dpyVersion = discord.__version__
       serverCount = len(bot.guilds)
@@ -48,6 +48,30 @@ class Utilities(commands.Cog):
 
 
 
+
+    ##Sets custom prefix for each server
+    @commands.command(aliases=['customprefix', 'prefix'],
+                      name="setprefix",
+                      help="Sets the prefix of your favourite bot in your own server.",
+                      brief="Custom prefix for your server", 
+                      description="Sets the prefix of your favourite bot in your own server.")
+    @commands.has_permissions(administrator=True)                  
+    async def setprefix(self, ctx, prefix):
+        with open('prefixes.json', 'r') as f:
+            prefixes = json.load(f)
+
+        prefixes[str(ctx.message.guild.id)] = prefix
+
+        #dumps all prefixes in the json file
+        with open('prefixes.json', 'w') as f:
+            json.dump(prefixes, f, indent = 4)
+            await ctx.send(f"Great! You can now call this awesome bot with your new prefix: {prefix}")
+            
+        
+    @setprefix.error
+    async def ksetprefix_error(self, ctx, error):
+        if isinstance(error, MissingPermissions):
+            await ctx.send("You have insufficient vibes for this command.")
 
 
 

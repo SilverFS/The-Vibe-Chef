@@ -19,7 +19,7 @@ class Fun(commands.Cog):
                       description="Use this command to display a random meme video.")
     async def meme(self, ctx, arg=""):
         count = 0
-        d = "D:\\IT-DATA\\PROJECTS\\Coding\\The Vibe-chef Discord bot\\functions\\media\\videos" #Your directory here
+        d = "D:\\PC-FILES\\Videos\\COLLECTION" #Your directory here
         for path in os.listdir(d):
             if os.path.isfile(os.path.join(d, path)):
                 count += 1
