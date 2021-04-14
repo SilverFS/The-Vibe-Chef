@@ -2,7 +2,7 @@ import discord
 from discord import Embed
 import glob, os, json
 from discord.ext import commands
-from pretty_help import Navigation, PrettyHelp, __version__
+from pretty_help import DefaultMenu, PrettyHelp, __version__
 intents = discord.Intents.all()
 def test_version():
     assert __version__ == "1.1.0"
@@ -20,16 +20,22 @@ def get_prefix(bot, message):
 
 
 
+
+
+menu=DefaultMenu(page_left='⬅️', page_right='➡️', remove='🗑️')
+
+# Custom ending note
+ending_note = "Output of the command: {help.clean_prefix}{help.invoked_with}. Use an extra parameter to get detailed information."
+            #"The ending note from {ctx.bot.user.name}\nFor command {help.clean_prefix}{help.invoked_with}"
+
 #Defines initial prefix and pretty_help command
-bot = commands.Bot(command_prefix= get_prefix, 
-case_insensitive=True, 
-help_command=PrettyHelp(navigation=Navigation(page_left='⬅️', page_right='➡️', remove='🗑️'), 
-author_id = 296302114794373121,  #Author discord ID!!!
-color=discord.Color.gold(),
-ending_note='Type the help command for more info on a command!',
-active=60, show_index=False,
-intents = intents,
-sort_commands=True))
+bot = commands.Bot(command_prefix= get_prefix, case_insensitive=True)
+bot.help_command = PrettyHelp(menu=menu, ending_note=ending_note, author_id = 296302114794373121, color=discord.Color.gold(), active_time=60, show_index=False, intents = intents, sort_commands=True)
+
+
+
+
+
 
 ##Adds guild to json file
 @bot.event
