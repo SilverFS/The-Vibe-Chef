@@ -4,3 +4,7 @@ services:
     build: ./
     restart: always
     container_name: discord-vibe-chef
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - ./backend/.env
