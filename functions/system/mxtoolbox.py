@@ -14,29 +14,9 @@ class MXToolbox(commands.Cog):
         self.bot = bot
 
 
-    @commands.command(name="urlwatch",
-                help="use '%urlwatch <argument>' to check if a website is up or down.",
-                brief="URL check tool",
-                description="use '%urlwatch <argument>' to check if a website is up or down.")
-    async def urlwatch(self, ctx, arg):
-        url = (f"http://{arg}") 
-        urlEmbed = discord.Embed(title=(f"{arg} is: "), description="Up!", color=0x992d22)
-        urlEmbed2 = discord.Embed(title=(f"{arg} is: "), description="Down!", color=0x992d22)
-        #Gets status here
-        try:
-            req = requests.get(url)
-            status = (req.status_code == 200)
-        except:
-            status = False
-        if status == True:
-            await ctx.send(embed=urlEmbed)
-        else:
-            await ctx.send(embed=urlEmbed2)
-
 
 
     @commands.command(name="dns",
-                help="A simple DNS lookup tool.",
                 brief="A simple DNS lookup tool!",
                 description="A simple DNS lookup tool.")
     async def dnsname(self, ctx, arg):

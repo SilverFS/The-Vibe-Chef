@@ -39,7 +39,7 @@ class Utilities(commands.Cog):
       dpyVersion = discord.__version__
       serverCount = len(bot.guilds)
       memberCount = len(set(bot.get_all_members()))
-      desResult = (f"I'm in {serverCount} servers, with a total of {memberCount} members. :blush:\nI'm running python {pythonVersion} and discord.py {dpyVersion} :snake:\n")
+      desResult = (f"I'm currently checking vibes in {serverCount} servers :blush:\nI'm running Python {pythonVersion} and discord.py {dpyVersion} :snake:\n")
       myembed = discord.Embed(title="My current stats:", description=desResult, color=0xf1c40f)
       myembed.set_footer(icon_url = ctx.author.avatar_url, text=f'Requested by {ctx.author.name}')
       myembed.set_author(name='The Vibe-Chef',
@@ -52,7 +52,6 @@ class Utilities(commands.Cog):
     ##Sets custom prefix for each server
     @commands.command(aliases=['customprefix', 'prefix'],
                       name="setprefix",
-                      help="Sets the prefix of your favourite bot in your own server.",
                       brief="Custom prefix for your server", 
                       description="Sets the prefix of your favourite bot in your own server.")
     @commands.has_permissions(administrator=True)                  

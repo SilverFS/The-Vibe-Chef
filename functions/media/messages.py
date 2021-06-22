@@ -11,16 +11,7 @@ class Messages(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        # don't respond to ourselves
-        if message.author == self.bot.user:
-            return
-
-        
-        if message.content == 'vibecheck':
-            await message.channel.send('VIBE')
-
+    
 
     ##Tableflip response (with embed)
     @commands.command(name="table",
