@@ -7,4 +7,4 @@ services:
     environment:
       - NODE_ENV=production
     env_file:
-      - ./backend/.env
+      - ./.env
