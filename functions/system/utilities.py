@@ -38,7 +38,6 @@ class Utilities(commands.Cog):
       pythonVersion = platform.python_version()
       dpyVersion = discord.__version__
       serverCount = len(bot.guilds)
-      memberCount = len(set(bot.get_all_members()))
       desResult = (f"I'm currently checking vibes in {serverCount} servers :blush:\nI'm running Python {pythonVersion} and discord.py {dpyVersion} :snake:\n")
       myembed = discord.Embed(title="My current stats:", description=desResult, color=0xf1c40f)
       myembed.set_footer(icon_url = ctx.author.avatar_url, text=f'Requested by {ctx.author.name}')
