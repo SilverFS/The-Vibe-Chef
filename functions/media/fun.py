@@ -46,8 +46,8 @@ class Fun(commands.Cog):
         channel = ctx.message.author.voice.channel
         voice = get(bot.voice_clients, guild=ctx.guild)
 
-        #path = 'functions/media/audio/moans/'
-        path = 'functions\\media\\audio\\moans\\'
+        path = 'functions/media/audio/moans/'
+        #path = 'functions\\media\\audio\\moans\\'
         list = [f for f in listdir(path) if isfile(join(path, f))]
 
 
@@ -79,8 +79,8 @@ class Fun(commands.Cog):
         channel = ctx.message.author.voice.channel
         voice = get(bot.voice_clients, guild=ctx.guild)
 
-        #path = 'functions/media/audio/boys/'
-        path = 'functions\\media\\audio\\boys\\'
+        path = 'functions/media/audio/boys/'
+        #path = 'functions\\media\\audio\\boys\\'
         onlyaudio = [f for f in listdir(path) if isfile(join(path, f))]
 
         if voice and voice.is_connected():
