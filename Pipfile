@@ -9,7 +9,7 @@ dnspython = "2.1.0"
 requests = "*"
 discord-pretty-help = "*"
 pynacl = "*"
-ffmpeg = "*"
+ffmpeg-python = "*"
 
 [dev-packages]
 
