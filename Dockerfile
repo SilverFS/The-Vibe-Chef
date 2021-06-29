@@ -2,7 +2,7 @@ FROM python:3.9.0-slim
 
 WORKDIR /app
 
-RUN apt-get update -y && pip install pipenv && apt-get install build-essential git -y --no-install-recommends
+RUN apt-get update -y && pip install pipenv && apt-get install ffmpeg && apt-get install build-essential git -y --no-install-recommends
 
 COPY Pipfile .
 COPY Pipfile.lock .
